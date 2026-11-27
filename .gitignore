@@ -1,0 +1,7 @@
+.local-design/
+.local-runtime/
+.local-deliverables/
+node_modules/
+*.log
+wp-config.php
+.env
