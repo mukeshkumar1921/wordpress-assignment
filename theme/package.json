@@ -1,7 +1,7 @@
 {
   "name": "aberdeen-mumbai-theme",
   "private": true,
-  "scripts": { "build": "wp-scripts build" },
+  "scripts": { "build": "wp-scripts build --config webpack.config.cjs" },
   "dependencies": { "@wordpress/element": "^6.0.0" },
   "devDependencies": { "@wordpress/scripts": "30.8.0" }
 }

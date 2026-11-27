@@ -5,6 +5,10 @@
 
 namespace Aberdeen;
 
+add_filter( 'use_block_editor_for_post_type', function ( $use_block_editor, $post_type ) {
+	return 'program' === $post_type ? false : $use_block_editor;
+}, 10, 2 );
+
 add_action( 'add_meta_boxes_program', function () {
 	add_meta_box( 'aberdeen-programme', 'Programme information', __NAMESPACE__ . '\editor_panel', 'program', 'normal', 'high' );
 	remove_meta_box( 'postcustom', 'program', 'normal' );
@@ -32,7 +36,7 @@ add_action( 'admin_enqueue_scripts', function ( $hook ) {
 	}
 	$asset = require $manifest;
 	wp_enqueue_media();
-	wp_enqueue_script( 'aberdeen-editor', asset( '../build/index.js' ), $asset['dependencies'], $asset['version'], true );
+	wp_enqueue_script( 'aberdeen-editor', get_template_directory_uri() . '/build/index.js', $asset['dependencies'], $asset['version'], true );
 	wp_enqueue_style( 'aberdeen-editor', asset( 'editor.css' ), array(), $asset['version'] );
 } );
 
