@@ -84,7 +84,7 @@ p { margin: 0 0 1rem; }
 .filters a:hover { background: #e5f1f4; }
 .filters a[aria-current="page"] { background: var(--card); color: #fff; border-color: var(--card); }
 .listing-status { margin-top: 1rem; text-align: center; }
-.programme-group + .programme-group { margin-top: 2.6rem; }
+[data-selected="all"] .programme-group + .programme-group { margin-top: 2.6rem; }
 [data-selected]:not([data-selected="all"]) .programme-group > h2,
 [data-selected="undergraduate"] [data-group="postgraduate"],
 [data-selected="postgraduate"] [data-group="undergraduate"] { display: none; }
